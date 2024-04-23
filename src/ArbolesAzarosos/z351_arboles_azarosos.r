@@ -11,14 +11,14 @@ require("rpart")
 
 # parmatros experimento
 PARAM <- list()
-PARAM$experimento <- 3510
+PARAM$experimento <- 3000
 
 # parameetros rpart
 PARAM$rpart_param <- list(
   "cp" = -1,
-  "minsplit" = 250,
-  "minbucket" = 100,
-  "maxdepth" = 14
+  "minsplit" = 750,
+  "minbucket" = 20,
+  "maxdepth" = 10
 )
 
 # parametros  arbol
@@ -33,14 +33,14 @@ PARAM$num_trees_max <- 500
 #------------------------------------------------------------------------------
 # Aqui comienza el programa
 
-setwd("~/buckets/b1/") # Establezco el Working Directory
+setwd("C:/Users/TOMAS/Desktop/MCD 2024/Laboratorio/datasets") # Establezco el Working Directory
 
 #cargo MI semilla, que esta en MI bucket
-tabla_semillas <- fread( "./datasets//mis_semillas.txt" )
+tabla_semillas <- fread( "./mis_semillas.txt" )
 ksemilla_azar <- tabla_semillas[ 1, semilla ]  # 1 es mi primer semilla
 
 # cargo los datos
-dataset <- fread("./datasets/dataset_pequeno.csv")
+dataset <- fread("./dataset_pequeno.csv")
 
 
 # creo la carpeta donde va el experimento
